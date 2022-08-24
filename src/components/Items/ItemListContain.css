@@ -1,0 +1,18 @@
+#productos{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#productos img {
+    width: 300px;
+}
+#imagen2{
+    height: 366px;
+    margin-left: 20px;
+}
+

@@ -1,5 +1,7 @@
 import "./NavBar.css";
 import logo from './../../../src/logo.webp'
+import "./../Carrito/CartWidget"
+import CartShop from "./../Carrito/CartWidget";
 
 const Encabezado = ({ nombre = "Luciano", apellido = "Piñeyro" }) => {
   // console.log(props);
@@ -47,11 +49,9 @@ const Encabezado = ({ nombre = "Luciano", apellido = "Piñeyro" }) => {
                 </a>
               </li>
             </ul>
-            <form className="d-flex">
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <div>
+                <CartShop/>
+            </div>
           </div>
         </div>
       </nav>

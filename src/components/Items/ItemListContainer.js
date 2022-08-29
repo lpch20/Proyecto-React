@@ -1,6 +1,7 @@
 import "./ItemListContain.css"
 import remeraRipcurl from './../../../src/remera ripcurl.jpg'
 import remeraVans from './../../../src/remera vans.jpg'
+import Contador from "./../Contador/ItemCount";
 
 
 const Items = () =>{
@@ -25,6 +26,8 @@ const Items = () =>{
                                     <option id="XXL">XXL</option>
                                     <option id="M">M</option>
                                 </select>
+
+                                <Contador/>
 
                             </div>
 
@@ -52,6 +55,8 @@ const Items = () =>{
                                     <option id="XXL">XXL</option>
                                     <option id="M">M</option>
                                 </select>
+
+                                <Contador/>
 
                             </div>
 

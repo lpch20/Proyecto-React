@@ -3,7 +3,7 @@ import Encabezado from "./components/NavBar/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Contador from "./components/Contador/ItemCount";
 import { useState } from "react";
-import Items from "./components/Items/ItemListContainer";
+import Items from "./components/ItemsListConatin/ItemListContainer";
 
 
 function App () {
@@ -12,11 +12,11 @@ function App () {
   const handleShow = () => {
     setShow(!show)
   }
-
-
+  
+  
   return (
     <div className="container">
-      <Encabezado nombre= "Luciano" apellido="Piñeyro"/>
+      <Encabezado/>
     
 
       <Items/>

@@ -1,0 +1,9 @@
+.stocks img{
+    width: 280px;
+    height: 400px;
+}
+
+.stocks{
+    display: flex;
+    justify-content: center;
+}

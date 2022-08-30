@@ -3,10 +3,7 @@ import logo from './../../../src/logo.webp'
 import "./../Carrito/CartWidget"
 import CartShop from "./../Carrito/CartWidget";
 
-const Encabezado = ({ nombre = "Luciano", apellido = "Piñeyro" }) => {
-  // console.log(props);
-
-  // const {nombre, apellido} = props
+const Encabezado = () => {
 
   return (
     <header>
@@ -56,9 +53,7 @@ const Encabezado = ({ nombre = "Luciano", apellido = "Piñeyro" }) => {
         </div>
       </nav>
 
-      {/* <h2>
-        Hola {nombre} {apellido}
-      </h2> */}
+
     </header>
   );
 };

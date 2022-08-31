@@ -7,3 +7,12 @@
     display: flex;
     justify-content: center;
 }
+
+.card{
+    width: 320px;
+}
+
+.card img{
+    width: 280px;
+    height: 400px;
+}

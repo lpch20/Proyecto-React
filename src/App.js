@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Contador from "./components/Contador/ItemCount";
 import { useState } from "react";
 import Items from "./components/ItemsListConatin/ItemListContainer";
+import PokeApi from "./components/PokeApi/PokeApi";
 
 
 function App () {
@@ -20,6 +21,8 @@ function App () {
     
 
       <Items/>
+
+      <PokeApi/>
     </div>
   );
 }

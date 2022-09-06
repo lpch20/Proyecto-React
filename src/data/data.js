@@ -10,18 +10,31 @@ const stock = [
         ],
         precio: 2500,
         stock: 10,
-        imagen:  remeraRipcurl
+        imagen:  remeraRipcurl,
+        category: 'remeras',    
     },
     
     {
         id: 2,
-        nombre: 'Remera Vans',
+        nombre: 'Canguro Vans',
         talles: [
             'XL', 'L', 'XXL', 'M'
         ],
         precio: 1500,
         stock: 10,
-        imagen: remeraVans
+        imagen: remeraVans,
+        category:  'canguros',   
+    },
+    {
+        id: 3,
+        nombre: 'Nike Air Force',
+        talles: [
+            'XL', 'L', 'XXL', 'M'
+        ],
+        precio: 1500,
+        stock: 10,
+        imagen: remeraVans,
+        category: 'championes',    
     },
 ]
 

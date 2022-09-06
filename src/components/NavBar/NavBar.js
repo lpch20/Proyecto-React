@@ -2,8 +2,11 @@ import "./NavBar.css";
 import logo from './../../../src/logo.webp'
 import "./../Carrito/CartWidget"
 import CartShop from "./../Carrito/CartWidget";
+import {Link} from "react-router-dom";
+import Item from "../Item/Item";
+import Items from "../ItemsListConatin/ItemListContainer";
 
-const Encabezado = () => {
+const Encabezado= () => {
 
   return (
     <header>
@@ -20,30 +23,25 @@ const Encabezado = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand" href="#">
+          <Link to='/' className="navbar-brand">
           <img src={logo} className="App-logo" alt="logo" /> Artic
-          </a>
+          </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Inicio
-                </a>
+                <Link to='/productos/remeras' className="nav-link active" aria-current="page" >
+                Remeras
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Productos
-                </a>
+                <Link to='/productos/canguros' className="nav-link" >
+                  Canguros
+                </Link>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link disabled"
-                  href="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                >
-                  Nosotros
-                </a>
+                <Link to='/productos/championes' className="nav-link" >
+                  Championes
+                </Link>
               </li>
             </ul>
             <div>

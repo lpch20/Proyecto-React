@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 import  pedirDatos  from "../../helpers/pedirDatos"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
-import Contador from "../Contador/ItemCount"
+import"./ItemDetailContainer.css"
+
 
 const ItemDetailContainer = () => {
     
@@ -29,7 +30,7 @@ const ItemDetailContainer = () => {
     }, [])
     
     return(
-        <div>
+        <div id="itemContain">
             {
             loading 
             ?  <h2>Cargando...</h2>

@@ -38,7 +38,7 @@ const Items = () => {
     }, [categoryId])
 
     return (
-    <div>
+    <div id="items">
         {
             loading 
             ? 

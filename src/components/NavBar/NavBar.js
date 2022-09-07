@@ -18,7 +18,7 @@ const Encabezado= () => {
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo03"
             aria-controls="navbarTogglerDemo03"
-            aria-expanded="false"
+            aria-expanded="true"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
@@ -28,6 +28,11 @@ const Encabezado= () => {
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link to='/' className="nav-link active" aria-current="page" >
+                Inicio
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link to='/productos/remeras' className="nav-link active" aria-current="page" >
                 Remeras

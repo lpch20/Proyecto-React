@@ -6,8 +6,6 @@ import Contador from "./components/Contador/ItemCount";
 import Items from "./components/ItemsListConatin/ItemListContainer";
 import PokeApi from "./components/PokeApi/PokeApi";
 import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Nosotros from "./components/Nosotros/Nosotros";
-import Contacto from "./components/Contacto/Contacto";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 
@@ -24,19 +22,17 @@ function App () {
     <div className="container">
 
       <BrowserRouter>
-        
-        <Encabezado/>
-
-          <Routes>
-            <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
-            <Route path="/productos/:categoryId" element={<Items/>}/>
-            <Route path="/" element={<Items/>}/>
-            <Route path="/nosotros" element={<Nosotros/>}/>
-            <Route path="/contacto" element={<Contacto/>}/>
-            <Route path="*" element= {<Navigate to="/"/>}/>
-          
-          </Routes>
-        
+        <div>
+          <Encabezado/>
+        </div>
+          <div className="items">
+            <Routes>
+              <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
+              <Route path="/productos/:categoryId" element={<Items/>}/>
+              <Route path="/" element={<Items/>}/>
+              <Route path="*" element= {<Navigate to="/"/>}/>
+            </Routes>
+          </div>          
         {/* <PokeApi/> */}
       </BrowserRouter>
     

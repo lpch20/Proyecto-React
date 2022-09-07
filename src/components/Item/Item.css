@@ -1,18 +1,19 @@
-.stocks img{
-    width: 280px;
-    height: 400px;
-}
-
-.stocks{
-    display: flex;
-    justify-content: center;
-}
 
 .card{
     width: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.div card-body{
+    display: flex;
+    flex-direction: row;
 }
 
 .card img{
     width: 280px;
     height: 400px;
+
 }
+
+

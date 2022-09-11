@@ -5,6 +5,7 @@ import CartShop from "./../Carrito/CartWidget";
 import {Link} from "react-router-dom";
 import Item from "../Item/Item";
 import Items from "../ItemsListConatin/ItemListContainer";
+import Nosotros from "../Nosotros/Nosotros";
 
 const Encabezado= () => {
 
@@ -18,7 +19,7 @@ const Encabezado= () => {
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo03"
             aria-controls="navbarTogglerDemo03"
-            aria-expanded="true"
+            aria-expanded=""
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
@@ -48,12 +49,18 @@ const Encabezado= () => {
                   Championes
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to='/nosotros' className="nav-link" >
+                  Nosotros
+                </Link>
+              </li>
             </ul>
             <div>
                 <CartShop/>
             </div>
           </div>
         </div>
+        
       </nav>
 
 

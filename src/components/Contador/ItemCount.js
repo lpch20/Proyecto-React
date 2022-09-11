@@ -2,24 +2,23 @@ import { useState, useEffect } from "react" //DECL¡ARAR UN ESTADO EN REACT.
 import "./ItemCount.css"
 
 
-const Contador = () => {
-    
-    const[counter, setCounter] = useState(1) //DECL¡ARAR UN ESTADO EN REACT.
+const Contador = ({max, counter, setCounter, handleAgregar}) => {
 
-    const sumar = () =>{
-        if(counter < 10){
+    const handleSumar = () =>{
+        if(counter < max){
             setCounter(counter + 1)
             counter++
         }
     }
 
-    const restar = () =>{
+    const handleRestar = () =>{
         if(counter > 1){
             setCounter(counter - 1)
             counter--
         }
         
     }
+
 
     useEffect( () => {
         console.log("Contador montado")
@@ -30,9 +29,11 @@ const Contador = () => {
     
     return (
         <div className="conatiner my-5">
-            <button id="button" onClick = {restar} className = "btn btn-outline-primary">-</button>
+            <button id="button" onClick = {handleRestar} className = "btn btn-outline-primary">-</button>
             <span className="mx-2">{counter}</span>
-            <button id="button" onClick = {sumar} className = "btn btn-outline-primary">+</button>
+            <button id="button" onClick = {handleSumar} className = "btn btn-outline-primary">+</button>
+            <br></br>
+            <button className="btn btn-success my-2" onClick={handleAgregar}>Agregar al Carrito</button>
         </div>
     )
 

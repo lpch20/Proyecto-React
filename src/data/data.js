@@ -12,102 +12,102 @@ const stock = [
     {
         id: 1,
         nombre: 'Remera Ripcurl F',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', Text: 'M' }
         ],
         precio: 2500,
-        stock: 10,
-        imagen:  remeraRipcurl,
-        category: 'remeras',    
+        stocks: 10,
+        imagen: remeraRipcurl,
+        category: 'remeras',
     },
-    
+
     {
         id: 2,
         nombre: 'Canguro Vans',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', Text: 'M' }
         ],
         precio: 4000,
-        stock: 10,
+        stocks: 10,
         imagen: canguroVans,
-        category:  'canguros',   
+        category: 'canguros',
     },
     {
         id: 3,
         nombre: 'Nike Air',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', text: 'M' }
         ],
         precio: 6000,
-        stock: 10,
+        stocks: 10,
         imagen: championesNike,
-        category: 'championes',    
+        category: 'championes',
     },
     {
         id: 4,
         nombre: 'Adidas light',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', text: 'M' }
         ],
         precio: 4500,
-        stock: 10,
+        stocks: 10,
         imagen: championesAdidas,
-        category: 'championes',    
+        category: 'championes',
     },
     {
         id: 5,
         nombre: 'All Star Classic',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', text: 'M' }
         ],
         precio: 3000,
-        stock: 10,
+        stocks: 10,
         imagen: championesAllstar,
-        category: 'championes',    
+        category: 'championes',
     },
     {
         id: 6,
         nombre: 'Remera Vans',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', text: 'M' }
         ],
         precio: 1500,
-        stock: 10,
+        stocks: 10,
         imagen: remeraVans,
-        category: 'remeras',    
+        category: 'remeras',
     },
     {
         id: 7,
         nombre: 'Canguro Nike',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', text: 'M' }
         ],
         precio: 2500,
-        stock: 10,
+        stocks: 10,
         imagen: canguroNike,
-        category: 'canguros',    
+        category: 'canguros',
     },
     {
         id: 8,
         nombre: 'Canguro Levis',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', text: 'M' }
         ],
         precio: 4000,
-        stock: 10,
+        stocks: 10,
         imagen: canguroLevis,
-        category: 'canguros',    
+        category: 'canguros',
     },
     {
         id: 9,
         nombre: 'Remera Levis',
-        talles: [
-            'XL', 'L', 'XXL', 'M'
+        options: [
+            { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', text: 'M' }
         ],
         precio: 1500,
-        stock: 10,
+        stocks: 10,
         imagen: remeraLevis,
-        category: 'remeras',    
+        category: 'remeras',
     },
 ]
 

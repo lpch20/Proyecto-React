@@ -7,8 +7,8 @@ import { CartContext } from "../Context/CartContext"
 
 const ItemDetail = ({ item }) => {
 
-    const { cart, addToCart } = useContext(CartContext)
-    console.log(cart)
+    // const { cart, addToCart } = useContext(CartContext)
+    // console.log(cart)
     
     const [cantidad, setCantidad] = useState(1)
     const [talle, setTalle] = useState(item.options[0].value)
@@ -24,7 +24,9 @@ const ItemDetail = ({ item }) => {
 
         }
 
-        addToCart(itemToCart)
+        // addToCart(itemToCart)
+
+        console.log(itemToCart)
 
     }
 

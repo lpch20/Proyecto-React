@@ -19,18 +19,18 @@ function App() {
   //   setShow(!show)
   // }
 
-  const [cart, setCart] = useState([])
+  // const [cart, setCart] = useState([])
 
-  const addToCart = (item) => {
-    setCart([...cart, item])
-  }
+  // const addToCart = (item) => {
+  //   setCart([...cart, item])
+  // }
 
   return (
 
-    <CartContext.Provider value={{
-      cart,
-      setCart
-    } }>
+    // <CartContext.Provider value={{
+    //   cart,
+    //   setCart
+    // } }>
 
       <div className="container">
 
@@ -54,7 +54,7 @@ function App() {
 
       </div>
 
-    </CartContext.Provider>
+    // </CartContext.Provider>
   );
 }
 

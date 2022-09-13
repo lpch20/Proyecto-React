@@ -8,29 +8,20 @@ import PokeApi from "./components/PokeApi/PokeApi";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Nosotros from "./components/Nosotros/Nosotros";
-import { CartContext } from "./components/Context/CartContext";
-import { useState } from "react";
-import ItemDetail from "./components/ItemDetail/ItemDetail";
+import {  CartProvider } from "./components/Context/CartContext";
+import Cart from "./components/Cart/Cart";
 
-function App() {
+
+const App = () => {
 
   // const [show, setShow] = useState(true)
   // const handleShow = () => {
   //   setShow(!show)
   // }
 
-  // const [cart, setCart] = useState([])
-
-  // const addToCart = (item) => {
-  //   setCart([...cart, item])
-  // }
-
   return (
 
-    // <CartContext.Provider value={{
-    //   cart,
-    //   setCart
-    // } }>
+    <CartProvider>
 
       <div className="container">
 
@@ -42,6 +33,7 @@ function App() {
             <Routes>
               <Route path="/item/:itemId" element={<ItemDetailContainer />} />
               <Route path="/productos/:categoryId" element={<Items />} />
+              <Route path="/cart/" element={<Cart />} />
               <Route path="/" element={<Items />} />
               <Route path="*" element={<Navigate to="/" />} />
               <Route path="/nosotros" element={<Nosotros />}></Route>
@@ -54,7 +46,7 @@ function App() {
 
       </div>
 
-    // </CartContext.Provider>
+    </CartProvider>
   );
 }
 

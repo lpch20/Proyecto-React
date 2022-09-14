@@ -29,6 +29,7 @@ const ItemDetailContainer = () => {
 
     }, [])
     
+    
     return(
         <div id="itemContain">
             {

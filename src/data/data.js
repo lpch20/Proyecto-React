@@ -16,7 +16,7 @@ const stock = [
             { value: 'XL', text: 'XL' }, { value: 'L', text: 'L' }, { value: 'XXL', text: 'XXL' }, { value: 'M', Text: 'M' }
         ],
         precio: 2500,
-        stocks: 10,
+        stocks: 0,
         imagen: remeraRipcurl,
         category: 'remeras',
     },

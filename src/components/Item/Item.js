@@ -17,7 +17,12 @@ const Item = ({ producto }) => {
                                         <option id="M">{producto.talles[3]}</option>
                                     </select>
                             <p>Precio: $ {producto.precio}</p> */}
-                            <Link to={`/item/${producto.id}`} className="btn btn-primary my-2">Ver mas</Link>
+                                {
+                                 producto.stocks > 0   
+                                 ? <Link to={`/item/${producto.id}`} className="btn btn-primary my-2">Ver mas</Link>
+                                 : <p className='my-2 btn btn-outline-danger'>No hay stock de este producto</p>
+                                }
+                            
                     </div>
                 </div>
             </div>

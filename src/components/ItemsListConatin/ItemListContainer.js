@@ -3,7 +3,8 @@ import pedirDatos from "../../helpers/pedirDatos";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-
+import {collection, getDocs, query, where} from "firebase/firestore"
+import { db } from "../firebase/fireConfig";
 
 const Items = () => {
 
@@ -21,20 +22,33 @@ const Items = () => {
 
         setLoading(true)
 
-        pedirDatos()
-            .then((res) => {
-                if(!categoryId){
-                    setProductos(res)
-                }else{
-                    setProductos(res.filter((prod) => prod.category === categoryId))
-                }
-            })
-            .catch((error) => {
+        const productosRef = collection(db, 'productos')
+        const q = categoryId ? query(productosRef, where('category', '==', categoryId)) : productosRef
 
-            })
-            .finally(()=>{
-                setLoading(false)
-            })
+        getDocs(q)
+        .then((snapshot)=>{
+            const productosDB = (snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}) ))
+
+            setProductos(productosDB)
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+
+        // pedirDatos()
+        //     .then((res) => {
+        //         if(!categoryId){
+        //             setProductos(res)
+        //         }else{
+        //             setProductos(res.filter((prod) => prod.category === categoryId))
+        //         }
+        //     })
+        //     .catch((error) => {
+
+        //     })
+        //     .finally(()=>{
+        //         setLoading(false)
+        //     })
     }, [categoryId])
 
     return (

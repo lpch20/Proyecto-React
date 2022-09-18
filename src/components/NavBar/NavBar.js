@@ -6,9 +6,11 @@ import {Link} from "react-router-dom";
 import Item from "../Item/Item";
 import Items from "../ItemsListConatin/ItemListContainer";
 import Nosotros from "../Nosotros/Nosotros";
+import { useCartContext } from "../Context/CartContext";
 
 const Encabezado= () => {
 
+  const { cart } = useCartContext()
   return (
     <header>
       <nav id="navBar" className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -56,13 +58,14 @@ const Encabezado= () => {
               </li>
             </ul>
             <div>
-                <CartShop/>
+               {cart.length > 0 && <CartShop/>}
             </div>
           </div>
         </div>
-        
+          
       </nav>
 
+     
 
     </header>
   );

@@ -28,8 +28,6 @@ const ItemDetail = ({ item }) => {
         isInCart(item.id)
         addToCart(itemToCart)
 
-        console.log(itemToCart)
-
     }
 
     return (

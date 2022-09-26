@@ -19,7 +19,7 @@ export const CartProvider = ({ children }) => {
     }
 
     const removeItem = (id) => {
-        setCart( cart.filter((item) => item.id !== id))
+        setCart(cart.filter((item) => item.id !== id))
     }
 
     const isInCart = (id) => {
@@ -48,10 +48,20 @@ export const CartProvider = ({ children }) => {
                 setCart([])
             }
         })
-
     }
 
-    useEffect (() => {
+    const terminarCompra = (id) => {
+        Swal.fire({
+            title: 'Compra finalizada con exito',
+            text: `Numero de orden: ${id}`,
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Siguiente'
+        })
+        setCart([])
+    }
+
+    useEffect(() => {
         localStorage.setItem('carrito', JSON.stringify(cart))
     }, [cart])
 
@@ -64,7 +74,8 @@ export const CartProvider = ({ children }) => {
             cantidadCart,
             cartTotal,
             emptyCart,
-            removeItem
+            removeItem,
+            terminarCompra
         }}>
             {
                 children

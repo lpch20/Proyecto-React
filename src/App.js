@@ -10,6 +10,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Nosotros from "./components/Nosotros/Nosotros";
 import {  CartProvider } from "./components/Context/CartContext";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
               <Route path="/" element={<Items />} />
               <Route path="*" element={<Navigate to="/" />} />
               <Route path="/nosotros" element={<Nosotros />}></Route>
+              <Route path="/checkout" element={<Checkout/>}></Route>
             </Routes>
           </div>
           {/* <PokeApi/> */}

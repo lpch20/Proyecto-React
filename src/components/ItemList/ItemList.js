@@ -13,9 +13,9 @@ const ItemList = ({ productos }) => {
 
             <div className="products">
                 {productos.map((prod) => {
-                    
-                    return <Item producto={prod} key={prod.div}/>
-                        
+
+                    return <div> <Item producto={prod} key={prod.div} /> </div>
+
                 })}
             </div>
 

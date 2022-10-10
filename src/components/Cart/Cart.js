@@ -3,12 +3,22 @@ import { CartContext, useCartContext } from '../Context/CartContext'
 import { useContext } from 'react'
 import { BsFillTrashFill } from "react-icons/bs";
 import { Link, Navigate } from 'react-router-dom';
+import "./Cart.css"
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
+  MDBBtn
+} from 'mdb-react-ui-kit';
+
 
 const Cart = () => {
 
   const { cart, cartTotal, emptyCart, removeItem } = useCartContext()
 
-  if (cart.length === 0) return <Navigate to="/"/>
+  if (cart.length === 0) return <Navigate to="/" />
 
   if (cart.length === 0) {
     return (
@@ -21,24 +31,35 @@ const Cart = () => {
   }
 
   return (
-    <div className='conatiner my-5'>
+    <div className='row'>
 
-      {cart.map((item) => (
-        <div key={item.id}>
-          <img src={item.imagen} />
-          <h3>Nombre:{item.nombre}</h3>
-          <p>Cantidad: {item.cantidad}</p>
-          <p>Precio: ${item.precio}</p>
-          <p>Talle: {item.talle}</p>
-          <button onClick={() => removeItem(item.id)} className='btn btn-danger'><BsFillTrashFill /></button>
+      <MDBCard className='mdbCard'>
+        <MDBCardBody className='bodyCard'>
+          <MDBCardText id='bodyCart'>
+            <div className='cardVista'>
+              {cart.map((item) => (
+                <div className='itemsCarrito' key={item.id}>
+                  <div className='items'>
+                    <img src={item.imagen} />
+                    <MDBCardTitle><h2>{item.nombre}</h2></MDBCardTitle>
+                    <p>Cantidad: {item.cantidad}</p>
+                    <p>Precio: ${item.precio}</p>
+                    <p>Talle: {item.talle}</p>
+                    <button onClick={() => removeItem(item.id)} className='btn btn-danger'><BsFillTrashFill /></button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </MDBCardText>
+        </MDBCardBody>
+        <div id='totalCarrito'>
+          <h4>Total: ${cartTotal()}</h4>
+          <button onClick={emptyCart} className='btn btn-danger'>Vaciar Carrito</button>
+
+          <Link className='finalizarCompra btn btn-success mx-2' to={'/checkout'}>Finalizar Compra</Link>
         </div>
-      ))}
+      </MDBCard>
 
-
-      <h4>Total: ${cartTotal()}</h4>
-      <button onClick={emptyCart} className='btn btn-danger'>Vaciar Carrito</button>
-
-      <Link className='btn btn-success mx-3' to={'/checkout'}>Finalizar Compra</Link>
 
 
     </div>

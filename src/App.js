@@ -1,24 +1,16 @@
 import "./App.css";
 import Encabezado from "./components/NavBar/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Contador from "./components/Contador/ItemCount";
-// import { useState } from "react";
 import Items from "./components/ItemsListConatin/ItemListContainer";
-import PokeApi from "./components/PokeApi/PokeApi";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Nosotros from "./components/Nosotros/Nosotros";
 import {  CartProvider } from "./components/Context/CartContext";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
-
+import Footer from "./components/PiePagina/Footer";
 
 const App = () => {
-
-  // const [show, setShow] = useState(true)
-  // const handleShow = () => {
-  //   setShow(!show)
-  // }
 
   return (
 
@@ -41,10 +33,10 @@ const App = () => {
               <Route path="/checkout" element={<Checkout/>}></Route>
             </Routes>
           </div>
-          {/* <PokeApi/> */}
+          <div>
+            <Footer/>
+          </div>
         </BrowserRouter>
-
-
 
       </div>
 

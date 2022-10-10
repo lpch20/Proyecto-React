@@ -34,21 +34,6 @@ const Items = () => {
         .finally(()=>{
             setLoading(false)
         })
-
-        // pedirDatos()
-        //     .then((res) => {
-        //         if(!categoryId){
-        //             setProductos(res)
-        //         }else{
-        //             setProductos(res.filter((prod) => prod.category === categoryId))
-        //         }
-        //     })
-        //     .catch((error) => {
-
-        //     })
-        //     .finally(()=>{
-        //         setLoading(false)
-        //     })
     }, [categoryId])
 
     return (

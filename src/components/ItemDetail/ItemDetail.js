@@ -5,6 +5,7 @@ import Select from "../Select/Select"
 import { Carousel } from "bootstrap"
 import { CartContext } from "../Context/CartContext"
 import { Link } from "react-router-dom"
+import itemDetail from "./itemDetail.css"
 
 const ItemDetail = ({ item }) => {
 
@@ -38,7 +39,6 @@ const ItemDetail = ({ item }) => {
                 <h3>{item.nombre}</h3>
                 {/* <p>{item.category}</p> */}
                 <p>${item.precio}</p>
-                <Select options={item.options} onSelect={setTalle} />
 
                 {
                     isInCart(item.id)

@@ -1,6 +1,6 @@
 
 .card{
-    width: 320px;
+    width: 350px;
     display: flex;
     flex-direction: column;
 }
@@ -13,6 +13,7 @@
 .card img{
     width: 280px;
     height: 400px;
+    margin: auto;
 
 }
 

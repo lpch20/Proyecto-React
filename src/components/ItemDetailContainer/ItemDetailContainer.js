@@ -29,14 +29,6 @@ const ItemDetailContainer = () => {
         .finally(()=>{
             setLoading(false)
         })
-        // pedirDatos()
-        // .then((res) => {
-        //     setItem(res.find((prod) => prod.id === Number(itemId)))
-        // })
-        // .catch(err => console.log(err))
-        // .finally(()=>{
-        //     setLoading(false)
-        // })
 
     }, [])
     

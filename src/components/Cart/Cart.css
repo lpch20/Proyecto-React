@@ -1,0 +1,35 @@
+
+#totalCarrito{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#bodyCart{
+    text-align: center;
+}
+
+.cardVista{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+#totalCarrito {
+    align-items: center;
+    padding: 10px;
+}
+
+#totalCarrito button{
+    width: 300px;
+    padding: 10px;
+}
+
+.finalizarCompra{
+    width: 300px;
+    margin-top: 10px;
+}

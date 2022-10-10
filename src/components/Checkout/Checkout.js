@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { useCartContext } from '../Context/CartContext'
-import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, updateDoc, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore'
 import { db } from '../firebase/fireConfig'
+import "./Checkout.css"
+import {
+    MDBInputGroup,
+} from 'mdb-react-ui-kit';
+
 
 
 const Checkout = () => {
@@ -49,7 +54,7 @@ const Checkout = () => {
         })
     }
 
-    const hanldeSubmit = (e) => {
+    const hanldeSubmit = async (e) => {
         e.preventDefault()
 
         const orden = {
@@ -77,24 +82,42 @@ const Checkout = () => {
             return
         }
 
+        const batch = writeBatch(db)
         const ordenesRef = collection(db, 'ordenes')
+        const productosRef = collection(db, 'productos')
 
-        cart.forEach((item) => {
-            const docRef = doc (db, 'productos', item.id)
+        const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id)))
 
-            getDoc(docRef)
-                .then((doc) => {
-                    updateDoc(docRef, {
-                        stocks: doc.data().stocks - item.cantidad
-                    })
+        const productos = await getDocs(q)
+
+        const outOfStock = []
+
+        productos.docs.forEach((doc) => {
+
+            const itemInCart = cart.find(item => item.id === doc.id)
+
+            if (doc.data().stocks >= itemInCart.cantidad) {
+                batch.update(doc.ref, {
+                    stocks: doc.data().stocks - itemInCart.cantidad
                 })
-        });
+            } else {
+                outOfStock.push(itemInCart)
+            }
 
-        addDoc(ordenesRef, orden)
-            .then((doc) => {
-                console.log(doc.id)
-                terminarCompra(doc.id)
-            })
+        })
+
+        if (outOfStock.length === 0) {
+            batch.commit()
+                .then(() => {
+                    addDoc(ordenesRef, orden)
+                        .then((doc) => {
+                            console.log(doc.id)
+                            terminarCompra(doc.id)
+                        })
+                })
+        } else {
+            alert("Hay items sin stock")
+        }
 
     }
 
@@ -105,16 +128,31 @@ const Checkout = () => {
 
     return (
         <div className='container'>
-            <div><h2 className='my-4'>Checkout</h2></div>
+            <div><h2 className='checkOut my-4'>Checkout</h2></div>
             <hr />
 
             <form onSubmit={hanldeSubmit}>
-                <input value={values.nombre} onChange={handleNombre} type={'text'} className="my-3 form-control" placeholder="Nombre" />
-                <input value={values.apellido} onChange={handleApellido} type={'text'} className="my-3 form-control" placeholder="Apellido" />
-                <input value={values.email} onChange={handleEmail} type={'email'} className="my-3 form-control" placeholder="Correo Electronico" />
-                <input value={values.direccion} onChange={handleDireccion} type={'text'} className="my-3 form-control" placeholder="Direccion" />
 
-                <button type={'submit'} className="btn btn-primary submit">Enviar</button>
+                <>
+                    <MDBInputGroup className='mb-3'>
+                        <input value={values.nombre} onChange={handleNombre} type={'text'} className="my-3 form-control" placeholder="Nombre" />
+                    </MDBInputGroup>
+
+                    <MDBInputGroup className='mb-3'>
+                        <input value={values.apellido} onChange={handleApellido} type={'text'} className="my-3 form-control" placeholder="Apellido" />
+                    </MDBInputGroup>
+
+                    <MDBInputGroup className='mb-3'>
+                        <input value={values.email} onChange={handleEmail} type={'email'} className="my-3 form-control" placeholder="Correo Electronico" />
+                    </MDBInputGroup>
+
+                    <MDBInputGroup className='mb-3'>
+                        <input value={values.direccion} onChange={handleDireccion} type={'text'} className="my-3 form-control" placeholder="Direccion" />
+                    </MDBInputGroup>
+
+                    <button type={'submit'} className=" envioForm btn btn-primary submit">Enviar</button>
+                </>
+
             </form>
         </div>
     )
